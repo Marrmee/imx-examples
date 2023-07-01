@@ -1,7 +1,7 @@
 import { AlchemyProvider } from '@ethersproject/providers';
 import { Wallet } from '@ethersproject/wallet';
 import { ImLogger, WinstonLogger } from '@imtbl/imlogging';
-import { CreateCollectionParams, ImmutableXClient } from '@imtbl/imx-sdk';
+import { CreateCollectionParams, ImmutableXClient, UpdateCollectionParams } from '@imtbl/imx-sdk';
 import { requireEnvironmentVariable } from 'libs/utils';
 
 import env from '../config/client';
@@ -35,21 +35,37 @@ const component = '[IMX-CREATE-COLLECTION]';
    * Edit your values here
    */
   const params: CreateCollectionParams = {
-    name: 'ENTER_COLLECTION_NAME',
-    // description: 'ENTER_COLLECTION_DESCRIPTION (OPTIONAL)',
+    name: 'Crystale Season 0 Pass',
+    description: 'With a Season 0 pass you get access to the demo of the Crystale video game! Visit https://www.crystale.io for more information',
     contract_address: collectionContractAddress,
     owner_public_key: ownerPublicKey,
-    // icon_url: '',
-    // metadata_api_url: '',
-    // collection_image_url: '',
+    icon_url: 'https://red-improved-cod-476.mypinata.cloud/ipfs/QmQKYyBfjpHgTATvuRGM77vYQU9dUw9LdgsuDDuvPym77Y',
+    metadata_api_url: 'https://gateway.pinata.cloud/ipfs/QmQ1SvmuHrMCJYtdH7vpMKetL5PYXknQZc3VKih6HryK8E',
+    collection_image_url: 'https://red-improved-cod-476.mypinata.cloud/ipfs/QmUYAX1AYZmGL8guAPRvxdkV7ePwXXxXf5RHcX8uWgbUCz',
     project_id: parseInt(projectId, 10),
   };
 
+  const paramsUpdate: UpdateCollectionParams = {
+    name: 'Crystale Season 0 Pass',
+    description: 'With a Season 0 pass you get access to the demo of the Crystale video game! Visit https://www.crystale.io for more information',
+    icon_url: 'https://red-improved-cod-476.mypinata.cloud/ipfs/QmQKYyBfjpHgTATvuRGM77vYQU9dUw9LdgsuDDuvPym77Y',
+    metadata_api_url: 'https://gateway.pinata.cloud/ipfs/QmQ1SvmuHrMCJYtdH7vpMKetL5PYXknQZc3VKih6HryK8E',
+    collection_image_url: 'https://red-improved-cod-476.mypinata.cloud/ipfs/QmUYAX1AYZmGL8guAPRvxdkV7ePwXXxXf5RHcX8uWgbUCz',
+  };
+
   let collection;
+  // try {
+  //   collection = await user.createCollection(params);
+  // } catch (error) {
+  //   throw new Error(JSON.stringify(error, null, 2));
+  // }
+
   try {
-    collection = await user.createCollection(params);
+    collection = await user.updateCollection(
+      collectionContractAddress,
+      paramsUpdate); 
   } catch (error) {
-    throw new Error(JSON.stringify(error, null, 2));
+      throw new Error(JSON.stringify(error, null, 2));
   }
 
   log.info(component, 'Created collection');

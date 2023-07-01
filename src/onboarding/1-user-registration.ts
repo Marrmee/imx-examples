@@ -13,7 +13,7 @@ const log: ImLogger = new WinstonLogger(loggerConfig);
 const component = '[IMX-USER-REGISTRATION]';
 
 (async (): Promise<void> => {
-  const privateKey = requireEnvironmentVariable('OWNER_ACCOUNT_PRIVATE_KEY');
+  const privateKey = requireEnvironmentVariable('ROYALTY_PRIVATE_KEY');
 
   const user = await ImmutableXClient.build({
     ...env.client,

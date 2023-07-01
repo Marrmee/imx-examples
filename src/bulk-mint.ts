@@ -75,7 +75,7 @@ const waitForTransaction = async (promise: Promise<string>) => {
   const tokens = Array.from({ length: number }, (_, i) => i).map(i => ({
     id: (tokenId + i).toString(),
     blueprint: 'onchain-metadata',
-  }));
+  }));//add royalties
 
   const payload: ImmutableMethodParams.ImmutableOffchainMintV2ParamsTS = [
     {
