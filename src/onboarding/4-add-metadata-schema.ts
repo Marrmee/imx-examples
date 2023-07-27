@@ -41,13 +41,27 @@ const component = '[IMX-ADD-COLLECTION-METADATA-SCHEMA]';
    * Edit your values here
    */
   const params: AddMetadataSchemaToCollectionParams = {
-    metadata: [
+    metadata:[
       {
-        name: 'EXAMPLE_BOOLEAN',
-        type: MetadataTypes.Boolean,
-        filterable: true,
+          name: "Crystale Season 0 Access Pass",
+          type: MetadataTypes.Text
       },
-      // ..add rest of schema here
+      {
+          name: "animation_url",
+          type: MetadataTypes.Text
+      },
+      {
+          name: "image_url",
+          type: MetadataTypes.Text
+      },
+      {
+          name: "artist",
+          type: MetadataTypes.Text
+      },
+      {
+          name: "benefits",
+          type: MetadataTypes.Text
+      }
     ],
   };
 
