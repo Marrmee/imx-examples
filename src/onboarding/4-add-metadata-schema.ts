@@ -51,6 +51,10 @@ const component = '[IMX-ADD-COLLECTION-METADATA-SCHEMA]';
           type: MetadataTypes.Text
       },
       {
+          name: "image_url",
+          type: MetadataTypes.Text
+      },
+      {
           name: "artist",
           type: MetadataTypes.Text
       },

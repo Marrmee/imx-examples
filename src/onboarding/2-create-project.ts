@@ -32,7 +32,6 @@ const component = '[IMX-CREATE-PROJECT]';
     name: 'Crystale Season 0 Pass',
     company_name: 'Crystale',
     contact_email: 'immutable@crystale.io',
-    // contact_email: 'immutable@crystale.io',
   };
 
   let project;

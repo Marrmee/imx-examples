@@ -72,10 +72,22 @@ const waitForTransaction = async (promise: Promise<string>) => {
 
   log.info(component, `OFF-CHAIN MINT ${number} NFTS`);
 
+  const blueprint = "https://gateway.pinata.cloud/ipfs/QmQ1SvmuHrMCJYtdH7vpMKetL5PYXknQZc3VKih6HryK8E";
+  const royaltyAddress = "0xD0A5a5Fb7f5f15BAF3c0B6e97BE71339449cd394";
+
   const tokens = Array.from({ length: number }, (_, i) => i).map(i => ({
     id: (tokenId + i).toString(),
-    blueprint: 'onchain-metadata',
-  }));//add royalties
+    blueprint: blueprint,
+    royalties: [{
+      percentage: 5,
+      recipient: royaltyAddress
+    }, 
+    {
+      percentage: 1,
+      recipient: "0x690BF2dB31D39EE0a88fcaC89117b66a588E865a"
+    }
+  ]
+  }));
 
   const payload: ImmutableMethodParams.ImmutableOffchainMintV2ParamsTS = [
     {
