@@ -21,7 +21,7 @@ import { ethers } from 'ethers';
     console.log(tokenIds);
   
     const metadataRefreshParams: CreateMetadataRefreshRequest = {
-      collection_address: collectionContractAddress, // The collection contract address
+      collection_address: collectionContractAddress,
       token_ids: tokenIds, // The tokens to refresh
     };
 
