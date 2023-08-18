@@ -36,7 +36,7 @@ const component = '[IMX-UPDATE-COLLECTION]';
     name: 'Deprecated',
     description: 'deprecated',
     icon_url: 'https://red-improved-cod-476.mypinata.cloud/ipfs/QmPe8KqXjeyP2ypAER38bLqXYU3MsjYLRUfixbSPAhrWry',
-    metadata_api_url: 'https://red-improved-cod-476.mypinata.cloud/ipfs/QmPe8KqXjeyP2ypAER38bLqXYU3MsjYLRUfixbSPAhrWry',
+    metadata_api_url: 'https://red-improved-cod-476.mypinata.cloud/ipfs/QmPLvw9KwmkumG6yFSw3W4gpJL35rXzW6XAX5Wd1oTWs5q/',
     collection_image_url: 'https://red-improved-cod-476.mypinata.cloud/ipfs/QmPe8KqXjeyP2ypAER38bLqXYU3MsjYLRUfixbSPAhrWry',
   };
 
